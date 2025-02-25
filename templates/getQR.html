@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getQR</title>
+    <style>
+        body,h1 {font-family: 'Lobster', cursive;
+        color: black;font-weight: bold;}
+        body, html {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://images.pexels.com/photos/7887800/pexels-photo-7887800.jpeg');
+            background-position: center;
+            background-size: cover;
+        }
+
+        .main-div {
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            height: 80%;
+            width: 50%;
+            flex-direction: column;
+            background-color: rgba(65, 242, 211, 0.8);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-div">
+        <h2>Enter Image File Name</h2>
+        <input type="text" id="filename" placeholder="Enter image file name">
+        <button onclick="loadImage()">Load Image</button>
+        <br>
+        <img id="imageDisplay" src="" alt="Image will be displayed here" style="max-width: 100%; margin-top: 10px;">
+        </div>
+
+    <script>
+        function loadImage() {
+            const filename = document.getElementById("filename").value;
+            if (!filename) {
+                alert("Please enter an image file name.");
+                return;
+            }
+            console.log("./QRcodes/"+filename+".png")
+            document.getElementById("imageDisplay").src = "/static/QRcodes/"+filename+".png"; 
+        }
+    </script>
+</body>
+</html>
