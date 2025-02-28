@@ -28,6 +28,18 @@
             background-color: rgba(65, 242, 211, 0.8);
             border-radius: 10px;
         }
+        .img-div {
+            display: flex;
+            justify-content: center;
+            align-items: center;    
+            object-fit: contain;
+            height:80%;
+            width:100%;
+        }
+        .imageDisplay {
+            height: 50px;
+            width: 50px;
+        }
     </style>
 </head>
 <body>
@@ -36,9 +48,10 @@
         <input type="text" id="filename" placeholder="Enter image file name">
         <button onclick="loadImage()">Load Image</button>
         <br>
-        <img id="imageDisplay" src="" alt="Image will be displayed here" style="max-width: 100%; margin-top: 10px;">
+        <div class="img-div">
+            <img id="imageDisplay" src="" alt="Image will be displayed here" style="max-width: 5x0%; margin-top: 5px;">
         </div>
-
+        </div>
     <script>
         function loadImage() {
             const filename = document.getElementById("filename").value;
